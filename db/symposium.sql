@@ -2,7 +2,8 @@ DROP TABLE registrations;
 DROP TABLE presentations;
 DROP TABLE delegates;
 
-CREATE TABLE delegates (
+CREATE TABLE delegates
+(
   id SERIAL2 primary key,
   name VARCHAR(255) not null,
   board_member BOOLEAN
