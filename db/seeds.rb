@@ -17,11 +17,11 @@ delegate4 = Delegate.new({"name" => "Neil Oderberg"})
 
 delegate5 = Delegate.new({"name" => "Ellen Ockham"})
 
-# delegate1.save()
-# delegate2.save()
-# delegate3.save()
-# delegate4.save()
-# delegate5.save()
+delegate1.save()
+delegate2.save()
+delegate3.save()
+delegate4.save()
+delegate5.save()
 
 presentation1 = Presentation.new({"name" => "Io, Io, it's Off to Space We Go", "time_slot" => 1, "capacity" => 50})
 

@@ -16,6 +16,9 @@ class TestDelegate < MiniTest::Test
     assert(!@delegate2.board_member)
   end
 
-
+  def test_save()
+    @delegate1.save()
+    assert_equal("Colby Galileo", @delegate1.name)
+  end
 
 end

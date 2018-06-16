@@ -11,6 +11,11 @@ class Delegate
     @board_member = options['board_member']
   end
 
-
+  def save()
+    sql = "INSERT INTO delegates (name, board_member) VALUES ($1, $2) RETURNING id"
+    values = [@name, @board_member]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i()
+  end
 
 end
