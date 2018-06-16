@@ -14,6 +14,11 @@ class TestPresentation < MiniTest::Test
     assert_equal(12, @presentation1.capacity)
   end
 
+  def test_save()
+    @presentation1.save()
+    assert_equal("Io", @presentation1.name)
+  end
 
+  
 
 end

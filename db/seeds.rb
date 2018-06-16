@@ -37,13 +37,13 @@ presentation6 = Presentation.new({"name" => "Adrastea and Amalthea", "time_slot"
 
 presentation7 = Presentation.new({"name" => "Thebe Themes", "time_slot" => 5, "capacity" => 5})
 
-# presentation1.save()
-# presentation2.save()
-# presentation3.save()
-# presentation4.save()
-# presentation5.save()
-# presentation6.save()
-# presentation7.save()
+presentation1.save()
+presentation2.save()
+presentation3.save()
+presentation4.save()
+presentation5.save()
+presentation6.save()
+presentation7.save()
 
 # delegate1.register(presentation1)
 # delegate1.register(presentation2)
