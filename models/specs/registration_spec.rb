@@ -13,6 +13,9 @@ class TestRegistration < MiniTest::Test
     assert_equal(6, @registration1.delegate_id)
   end
 
-
+  def test_save()
+    @registration1.save()
+    assert_equal(4, @registration1.presentation_id)
+  end
 
 end
