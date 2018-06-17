@@ -3,9 +3,9 @@ require_relative("../models/presentation.rb")
 require_relative("../models/registration.rb")
 require("pry-byebug")
 
-# Registration.delete_all()
-# Presentation.delete_all()
-# Delegate.delete_all()
+Registration.delete_all()
+Presentation.delete_all()
+Delegate.delete_all()
 
 delegate1 = Delegate.new({"name" => "Colby Galileo", "board_member" => true})
 
@@ -45,7 +45,7 @@ presentation5.save()
 presentation6.save()
 presentation7.save()
 
-registration1 = Registration.new({"delegate_id" => 1, "presentation_id" => 1})
+registration1 = Registration.new({"delegate_id" => delegate1.id, "presentation_id" => presentation1.id})
 
 registration1.save()
 

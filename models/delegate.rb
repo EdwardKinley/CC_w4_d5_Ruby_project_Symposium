@@ -18,4 +18,20 @@ class Delegate
     @id = results.first()['id'].to_i()
   end
 
+  def self.map_items(data)
+    return data.map{|datum| Delegate.new(datum)}
+  end
+
+  def self.all()
+    sql = "SELECT * FROM delegates"
+    delegates = SqlRunner.run(sql)
+    return Delegate.map_items(delegates)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM delegates"
+    SqlRunner.run(sql)
+  end
+
+
 end

@@ -20,6 +20,6 @@ CREATE TABLE presentations
 CREATE TABLE registrations
 (
   id SERIAL2 primary key,
-  presentation_id INT2 references presentations(id),
-  delegate_id INT8 references delegates(id)
+  presentation_id INT2 references presentations(id) ON DELETE CASCADE,
+  delegate_id INT8 references delegates(id) ON DELETE CASCADE
 );

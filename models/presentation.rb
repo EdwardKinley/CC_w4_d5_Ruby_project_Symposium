@@ -18,4 +18,32 @@ class Presentation
     @id = results.first()['id'].to_i()
   end
 
+  def self.map_items(data)
+    return data.map{|datum| Presentation.new(datum)}
+  end
+
+  def self.all()
+    sql = "SELECT * FROM presentations"
+    presentations = SqlRunner.run(sql)
+    return Presentation.map_items(presentations)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM presentations"
+    SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM presentations WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Presentation.new(result.first)
+  end
+
+  def destroy(id)
+    sql = "DELETE FROM presentations WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 end
