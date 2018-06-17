@@ -40,7 +40,7 @@ class Presentation
     return Presentation.new(result.first)
   end
 
-  def destroy(id)
+  def self.destroy(id)
     sql = "DELETE FROM presentations WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)

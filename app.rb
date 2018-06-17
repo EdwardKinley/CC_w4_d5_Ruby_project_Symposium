@@ -1,15 +1,18 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-
 require_relative('./models/presentation.rb')
 also_reload('./models/*')
 
-get '/presentations/' do
+get '/' do
+  erb(:index)
+end
+
+get '/presentations' do
   @presentations = Presentation.all()
-  # erb(:index)
+  erb(:"presentations/index")
 end
 
 
-binding.pry
-nil
+# binding.pry
+# nil
