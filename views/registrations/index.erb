@@ -3,15 +3,16 @@
 <table>
 
   <tr>
-    <th>presentation id</th>
-    <th>delegate id</th>
+    <th>registration id</th>
+    <th>presentation</th>
+    <th>delegate</th>
   </tr>
 
   <% for registration in @registrations %>
   <tr>
-    <td><a href="/registrations/<%= registration.id %>"><%= registration.presentation.id %></a></td>
-    <!-- <td>|</td> -->
-    <td><%= registration.delegate_id %></td>
+    <td><a href="/registrations/<%= registration.id %>"><%= registration.id %></a></td>
+    <td><%= registration.presentation.name %></td>
+    <td><%= registration.delegate.name %></td>
   </tr>
   <% end %>
 
