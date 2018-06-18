@@ -19,7 +19,7 @@ class Delegate
   end
 
   def register(presentation)
-    registration = Registration.new({"presentation_id"=>presentation.id, "delegate_id"=>self.id})
+    registration = Registration.new({"presentation_id" => presentation.id, "delegate_id" => self.id})
     registration.save
   end
 

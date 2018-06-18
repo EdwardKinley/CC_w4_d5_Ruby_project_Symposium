@@ -49,7 +49,7 @@ registration1 = Registration.new({"delegate_id" => delegate1.id, "presentation_i
 
 registration1.save()
 
-registration2 = delegate1.register(presentation1)
+registration2 = delegate1.register(presentation5)
 registration3 = delegate1.register(presentation2)
 registration4 = delegate1.register(presentation3)
 registration5 = delegate1.register(presentation4)
@@ -59,3 +59,7 @@ registration8 = delegate3.register(presentation6)
 registration9 = delegate3.register(presentation7)
 registration10 = delegate4.register(presentation2)
 registration11 = delegate5.register(presentation3)
+
+registration12 = presentation1.register(delegate2)
+registration13 = presentation1.register(delegate3)
+registration14 = presentation2.register(delegate2)
