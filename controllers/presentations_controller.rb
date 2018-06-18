@@ -17,6 +17,8 @@ get '/presentations/:id' do #show
   erb(:"presentations/show")
 end
 
-# post '/presentations' do #create
-#
-# end
+post '/presentations' do #create
+  @presentation = Presentation.new(params)
+  @presentation.save()
+  erb(:"presentations/create")
+end
