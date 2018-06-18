@@ -1,0 +1,11 @@
+<h1>Add new presentation</h1>
+
+<form method="post" action="/presentations">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name"/>
+
+  <label for="time_slot">Time slot:</label>
+  <input type="number" min="1" max="6" name="time_slot" id="time_slot"/>
+
+  <input type="submit" value="Submit"/>
+</form>
