@@ -1,0 +1,18 @@
+<h1>Registrations</h1>
+
+<table>
+
+  <tr>
+    <th>presentation id</th>
+    <th>delegate id</th>
+  </tr>
+
+  <% for registration in @registrations %>
+  <tr>
+    <td><a href="/registrations/<%= registration.id %>"><%= registration.presentation.id %></a></td>
+    <!-- <td>|</td> -->
+    <td><%= registration.delegate_id %></td>
+  </tr>
+  <% end %>
+
+</table>
