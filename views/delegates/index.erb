@@ -1,0 +1,20 @@
+<h1>Delegates</h1>
+
+<table>
+
+  <tr>
+    <th>Delegate</th>
+    <!-- <th></th> -->
+    <th>Board member</th>
+  </tr>
+
+  <% for delegate in @delegates %>
+
+  <tr>
+    <td><a href="/delegates/<%= delegate.id %>"><%= delegate.name %></a></td>
+    <!-- <td>|</td> -->
+    <td><%= delegate.board_member %></td>
+  </tr>
+  <% end %>
+
+</table>

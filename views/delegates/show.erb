@@ -1,0 +1,10 @@
+<h2><%= @delegate.name %></h2>
+
+<h3>Board member | <%= @delegate.board_member %></h3>
+
+<h4>Registered presentations:</h4>
+<ul>
+  <% @delegate.presentations.each do |presentation| %>
+  <li><%= presentation.name %></li>
+  <% end %>
+</ul>
