@@ -1,1 +1,24 @@
-<h1>This is the 'presentations' page</h1>
+<h1>Presentations</h1>
+
+<table>
+
+  <tr>
+    <th>Presentation</th>
+    <th></th>
+    <th>Time Slot</th>
+    <th></th>
+    <th>Capacity</th>
+  </tr>
+
+  <% for presentation in @presentations %>
+
+  <tr>
+    <td><a href="/presentations/<%= presentation.id %>"><%= presentation.name %></a></td>
+    <td>|</td>
+    <td><%= presentation.time_slot %></td>
+    <td>|</td>
+    <td><%= presentation.capacity %></td>
+  </tr>
+  <% end %>
+
+</table>

@@ -15,6 +15,12 @@ get '/presentations' do
   erb(:"presentations/index")
 end
 
+get '/presentations/:id' do
+  @presentation = Presentation.find(params['id'].to_i())
+  erb(:"presentations/show")
+end
 
-binding.pry
-nil
+
+
+# binding.pry
+# nil
