@@ -18,6 +18,18 @@ class Delegate
     @id = results.first()['id'].to_i()
   end
 
+  def rename(new_name)
+    sql = "UPDATE delegates SET name = $1 WHERE id = $2"
+    values = [new_name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_board_member(new_value)
+    sql = "UPDATE delegates SET board_member = $1 WHERE id = $2"
+    values = [new_value, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.map_items(data)
     return data.map{|datum| Delegate.new(datum)}
   end
