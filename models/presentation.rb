@@ -18,6 +18,24 @@ class Presentation
     @id = results.first()['id'].to_i()
   end
 
+  def rename(new_name)
+    sql = "UPDATE presentations SET name = $1 WHERE id = $2"
+    values = [new_name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_time_slot(new_time_slot)
+    sql = "UPDATE presentations SET time_slot = $1 WHERE id = $2"
+    values = [new_time_slot, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_capacity(new_capacity)
+    sql = "UPDATE presentations SET capacity = $1 WHERE id = $2"
+    values = [new_capacity, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.map_items(data)
     return data.map{|datum| Presentation.new(datum)}
   end
