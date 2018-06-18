@@ -1,1 +1,10 @@
-hi
+<h2><%= @presentation.name %></h2>
+
+<h3>Time-slot | <%= @presentation.time_slot %></h3>
+<h3>Capacity | <%= @presentation.capacity %></h3>
+<h4>Registered delegates:</h4>
+<ul>
+  <% @presentation.delegates.each do |delegate| %>
+  <li><%= delegate.name %></li>
+  <% end %>
+</ul>

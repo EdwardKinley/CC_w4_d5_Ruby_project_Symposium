@@ -1,12 +1,13 @@
 body {
   color: grey;
   background-color: black;
-  font-family: impact;
+  font-family: tahoma;
 }
 
 h1 {
   color: white;
   text-align: center;
+  font-family: copperplate;
 }
 
 h2 {
