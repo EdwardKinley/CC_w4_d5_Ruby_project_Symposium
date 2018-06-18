@@ -17,6 +17,18 @@ class Registration
     @id = results.first()['id'].to_i()
   end
 
+  def change_presentation_id(new_presentation_id)
+    sql = "UPDATE registrations SET presentation_id = $1 WHERE id = $2"
+    values = [new_presentation_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_delegate_id(new_delegate_id)
+    sql = "UPDATE registrations SET delegate_id = $1 WHERE id = $2"
+    values = [new_delegate_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.map_items(data)
     return data.map{|datum| Registration.new(datum)}
   end
