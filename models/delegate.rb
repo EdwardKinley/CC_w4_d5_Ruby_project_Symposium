@@ -18,6 +18,11 @@ class Delegate
     @id = results.first()['id'].to_i()
   end
 
+  def register(presentation)
+    registration = Registration.new({"presentation_id"=>presentation.id, "delegate_id"=>self.id})
+    registration.save
+  end
+
   def rename(new_name)
     sql = "UPDATE delegates SET name = $1 WHERE id = $2"
     values = [new_name, @id]
