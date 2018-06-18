@@ -33,5 +33,18 @@ class Delegate
     SqlRunner.run(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM delegates WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Delegate.new(result.first)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM delegates WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 
 end

@@ -4,9 +4,9 @@ require_relative("../delegate.rb")
 class TestDelegate < MiniTest::Test
 
   def setup()
-    options1 = {"id" => 1, "name" => "Colby Galileo", "board_member" => true}
+    options1 = {"name" => "Colby Galileo", "board_member" => true}
     @delegate1 = Delegate.new(options1)
-    options2 = {"id" => 2, "name" => "Thomas Feser"}
+    options2 = {"name" => "Thomas Feser"}
     @delegate2 = Delegate.new(options2)
   end
 
@@ -16,9 +16,6 @@ class TestDelegate < MiniTest::Test
     assert(!@delegate2.board_member)
   end
 
-  def test_save()
-    @delegate1.save()
-    assert_equal("Colby Galileo", @delegate1.name)
-  end
+  
 
 end
