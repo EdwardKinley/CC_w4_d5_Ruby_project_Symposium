@@ -30,6 +30,13 @@ class Delegate
     SqlRunner.run(sql, values)
   end
 
+  def presentations()
+    sql = "SELECT * FROM (presentations p INNER JOIN registrations r ON p.id = r.presentation_id) WHERE delegate_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Presentation.map_items(results)
+  end
+
   def self.map_items(data)
     return data.map{|datum| Delegate.new(datum)}
   end
