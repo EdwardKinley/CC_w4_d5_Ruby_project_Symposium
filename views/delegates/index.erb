@@ -11,7 +11,7 @@
 
   <tr>
     <td><a href="/delegates/<%= delegate.id %>"><%= delegate.name %></a></td>
-    <td><%= delegate.board_member=="t" ? "yes" : "no" %></td>
+    <td <%= delegate.board_member=="t" ? "class='green'" : "class='red'" %>><%= delegate.board_member=="t" ? "yes" : "no" %></td>
   </tr>
   <% end %>
 
