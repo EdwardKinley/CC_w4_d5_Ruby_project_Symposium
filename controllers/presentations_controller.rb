@@ -28,10 +28,11 @@ get '/presentations/:id/edit' do #edit
   erb(:"presentations/edit")
 end
 
-# post '/presentations/:id' do #update
-#   Presentation.new(params).update
-#   erb(:"presentations/update")
-# end
+post '/presentations/:id' do #update
+  @presentation = Presentation.new(params)
+  @presentation.update
+  erb(:"presentations/update")
+end
 
 post '/presentations/:id/delete' do #destroy
   @presentation = Presentation.find(params['id'].to_i())

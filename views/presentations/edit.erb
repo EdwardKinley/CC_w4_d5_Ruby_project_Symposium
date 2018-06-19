@@ -1,1 +1,16 @@
-hi.edit
+<h1>Edit presentation</h1>
+
+<form method="post" action="/presentations/<%= @presentation.id %>">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="<%= @presentation.name %>"/>
+
+  <label for="time_slot">Time slot:</label>
+  <input type="number" min="1" max="6" name="time_slot" id="time_slot" value="<%= @presentation.time_slot %>"/>
+
+  <label for="capacity">Capacity:</label>
+  <input type="number" min="1" max="999" name="capacity" id="capacity" value="<%= @presentation.capacity %>"/>
+
+  <input type="submit" value="Submit"/>
+  
+</form>
