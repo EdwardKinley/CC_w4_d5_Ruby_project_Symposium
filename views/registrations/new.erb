@@ -1,0 +1,25 @@
+<h1>Create new registration</h1>
+
+<form method="post" action="/registrations">
+
+  <label>
+  Select a presentation:
+    <select name="presentation_id">
+      <% for presentation in @presentations %>
+      <option value="<%= presentation.id %>"><%= presentation.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a delegate:
+    <select name="delegate_id">
+      <% for delegate in @delegates %>
+      <option value="<%= delegate.id %>"><%= delegate.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" value="Submit"/>
+  
+</form>
