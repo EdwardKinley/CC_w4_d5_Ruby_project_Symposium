@@ -24,3 +24,24 @@ post '/registrations' do #create
   @registration.save()
   erb(:"registrations/create")
 end
+
+get '/registrations/:id/edit' do #edit
+  @presentations = Presentation.all()
+  @delegates = Delegate.all()
+  @registration = Registration.find(params['id'].to_i())
+  erb(:"registrations/edit")
+end
+
+post '/registrations/:id' do #update
+  @registration = Registration.new(params)
+  @registration.update()
+  erb(:"registrations/update")
+end
+
+post '/registrations/:id/delete' do #destroy
+  @registration = Registration.find(params['id'].to_i())
+  @presentation_name = @registration.presentation.name()
+  @delegate_name = @registration.delegate.name()
+  @registration.delete()
+  erb(:"registrations/destroy")
+end

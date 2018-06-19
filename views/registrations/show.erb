@@ -2,3 +2,11 @@
 
 <h3>Presentation | <%= @registration.presentation.name %></h3>
 <h3>Delegate | <%= @registration.delegate.name %></h3>
+
+<form action="/registrations/<%= @registration.id %>/edit" method="get">
+  <input type="submit" value="Edit registration">
+</form>
+
+<form action="/registrations/<%= @registration.id %>/delete" method="post">
+  <input type="submit" value="Delete registration">
+</form>
