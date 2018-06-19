@@ -30,7 +30,7 @@ end
 
 post '/presentations/:id' do #update
   @presentation = Presentation.new(params)
-  @presentation.update
+  @presentation.update()
   erb(:"presentations/update")
 end
 

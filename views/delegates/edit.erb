@@ -1,0 +1,14 @@
+<h1>Edit delegate</h1>
+
+<form method="post" action="/delegates/<%= @delegate.id %>">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="<%= @delegate.name %>"/>
+
+  <label>Board member?:</label>
+  <input type="radio" name="board_member" value="no" <%= "checked" if @delegate.board_member == "f" %>/>No
+  <input type="radio" name="board_member" value="yes" <%= "checked" if @delegate.board_member == "t" %>/>Yes
+
+  <input type="submit" value="Submit"/>
+
+</form>

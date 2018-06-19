@@ -22,3 +22,20 @@ post '/delegates' do #create
   @delegate.save()
   erb(:"delegates/create")
 end
+
+get '/delegates/:id/edit' do #edit
+  @delegate = Delegate.find(params['id'].to_i())
+  erb(:"delegates/edit")
+end
+
+post '/delegates/:id' do #update
+  @delegate = Delegate.new(params)
+  @delegate.update()
+  erb(:"delegates/update")
+end
+
+post '/delegates/:id/delete' do #destroy
+  @delegate = Delegate.find(params['id'].to_i())
+  @delegate.delete()
+  erb(:"delegates/destroy")
+end
