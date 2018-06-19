@@ -4,7 +4,6 @@
 
   <tr>
     <th>Delegate</th>
-    <!-- <th></th> -->
     <th>Board member</th>
   </tr>
 
@@ -12,8 +11,7 @@
 
   <tr>
     <td><a href="/delegates/<%= delegate.id %>"><%= delegate.name %></a></td>
-    <!-- <td>|</td> -->
-    <td><%= delegate.board_member %></td>
+    <td><%= delegate.board_member=="t" ? "yes" : "no" %></td>
   </tr>
   <% end %>
 

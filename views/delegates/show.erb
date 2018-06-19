@@ -1,6 +1,6 @@
 <h2><%= @delegate.name %></h2>
 
-<h3>Board member | <%= @delegate.board_member %></h3>
+<h3>Board member | <%= @delegate.board_member=="t" ? "yes" : "no" %></h3>
 
 <form action="/delegates/<%= @delegate.id %>/edit" method="get">
   <input type="submit" value="Edit delegate">
