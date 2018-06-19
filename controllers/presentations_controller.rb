@@ -22,3 +22,19 @@ post '/presentations' do #create
   @presentation.save()
   erb(:"presentations/create")
 end
+
+get '/presentations/:id/edit' do #edit
+  @presentation = Presentation.find(params['id'].to_i())
+  erb(:"presentations/edit")
+end
+
+# post '/presentations/:id' do #update
+#   Presentation.new(params).update
+#   erb(:"presentations/update")
+# end
+
+post '/presentations/:id/delete' do #destroy
+  @presentation = Presentation.find(params['id'].to_i())
+  @presentation.delete()
+  erb(:"presentations/destroy")
+end

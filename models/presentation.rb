@@ -18,6 +18,18 @@ class Presentation
     @id = results.first()['id'].to_i()
   end
 
+  def update()
+    sql = "UPDATE presentations SET (name, time_slot, capacity) = ($1, $2, $3) WHERE id = $4"
+    values = [@name, @time_slot, @capacity, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM presentations WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def register(delegate)
     registration = Registration.new({"presentation_id" => self.id, "delegate_id" => delegate.id})
     registration.save()
