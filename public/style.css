@@ -1,7 +1,7 @@
 body {
   color: grey;
   background-color: black;
-  font-family: tahoma;
+  font-family: helvetica;
 }
 
 h1 {
@@ -42,6 +42,32 @@ span.red {
 
 span.green {
   color: green;
+}
+
+table {
+  color: black;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+table th {
+  /* text-align: left; */
+  background-color: lightgrey;
+}
+
+table td, table th {
+  border: 1px solid grey;
+  padding: 0.35em;
+  text-align: center;
+}
+
+button {
+  font-size: 1em;
+  margin: auto;
+  display: block;
+  background-color: lightgrey;
 }
 
 /* li {

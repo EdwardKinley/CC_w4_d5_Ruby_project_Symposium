@@ -4,9 +4,7 @@
 
   <tr>
     <th>Presentation</th>
-    <!-- <th></th> -->
     <th>Time Slot</th>
-    <!-- <th></th> -->
     <th>Capacity</th>
   </tr>
 
@@ -14,14 +12,15 @@
 
   <tr>
     <td><a href="/presentations/<%= presentation.id %>"><%= presentation.name %></a></td>
-    <!-- <td>|</td> -->
     <td><%= presentation.time_slot %></td>
-    <!-- <td>|</td> -->
     <td><%= presentation.capacity %></td>
   </tr>
   <% end %>
 
 </table>
+<br>
 
-<hr>
-<a href="/presentations/new">Add new presentation</a>
+<button type="button" name="new presentation">
+  <a href="/presentations/new">Add new presentation</a>
+</button>
+<br>
