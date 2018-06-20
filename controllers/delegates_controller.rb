@@ -15,7 +15,6 @@ end
 get '/delegates/:id' do #show
   @delegate = Delegate.find(params['id'].to_i())
   @presentations = Presentation.all()
-  @delegates = Delegate.all()
   erb(:"delegates/show")
 end
 

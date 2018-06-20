@@ -14,6 +14,7 @@ end
 
 get '/presentations/:id' do #show
   @presentation = Presentation.find(params['id'].to_i())
+  @delegates = Delegate.all()
   erb(:"presentations/show")
 end
 
