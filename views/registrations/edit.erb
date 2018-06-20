@@ -21,7 +21,7 @@
       <td>
         <select name="delegate_id">
           <% for delegate in @delegates %>
-          <option value="<%= delegate.id %>" <%= "selected" if delegate.id == @registration.delegate %>><%= delegate.name %></option>
+          <option value="<%= delegate.id %>" <%= "selected" if delegate.id == @registration.delegate_id %>><%= delegate.name %></option>
           <% end %>
         </select>
       </td>

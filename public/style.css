@@ -46,6 +46,17 @@ table {
   vertical-align: top;
 }
 
+table.nav {
+  position: sticky;
+  color: black;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
 table th {
   background-color: darkgrey;
 }
@@ -63,6 +74,10 @@ table tr:hover {
 table th.blank, td.blank {
   background-color: black;
   border: none;
+}
+
+table.nav tr:hover {
+  background-color: black;
 }
 
 table.edit tr:hover {

@@ -12,9 +12,9 @@ CREATE TABLE delegates
 CREATE TABLE presentations
 (
   id SERIAL2 primary key,
-  name VARCHAR(255) not null,
-  time_slot INT2,
-  capacity INT2
+  name VARCHAR(255) not null unique,
+  time_slot INT2 not null,
+  capacity INT2 not null
 );
 
 CREATE TABLE registrations
