@@ -1,4 +1,18 @@
-<p>Presentation deleted</p>
-<p>Name: <%= @presentation.name %></p>
-<p>Time slot: <%= @presentation.time_slot %></p>
-<p>Capacity: <%= @presentation.capacity %></p>
+<h1>Presentation deleted</h1>
+
+<table class="edit">
+  <tr>
+    <td>Name</td>
+    <td><%= @presentation.name %></td>
+  </tr>
+  <tr>
+    <td>Time slot</td>
+    <td><%= @presentation.time_slot %></td>
+  </tr>
+  <tr>
+    <td>Capacity</td>
+    <td><%= @presentation.capacity %></td>
+  </tr>
+</table>
+
+<br>

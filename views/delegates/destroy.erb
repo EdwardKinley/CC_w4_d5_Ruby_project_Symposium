@@ -1,3 +1,14 @@
-<p>Delegate deleted</p>
-<p>Name: <%= @delegate.name %></p>
-<p>Board member? <%= @delegate.board_member %></p>
+<h1>Delegate deleted</h1>
+
+<table class="edit">
+  <tr>
+    <td>Name</td>
+    <td><%= @delegate.name %></td>
+  </tr>
+  <tr>
+    <td>Board member?</td>
+    <td <%= @delegate.board_member=="t" ? "class='green'" : "class='red'" %>><%= @delegate.board_member=="t" ? "yes" : "no" %></td>
+  </tr>
+</table>
+
+<br>

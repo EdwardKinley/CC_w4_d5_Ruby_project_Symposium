@@ -1,4 +1,18 @@
-<p>Registration deleted</p>
-<p>Registration id: <%= @registration.id %></p>
-<p>Presentation: <%= @presentation_name %></p>
-<p>Delegate: <%= @delegate_name %></p>
+<h1>Registration deleted</h1>
+
+<table class="edit">
+  <tr>
+    <td>Registration id</td>
+    <td><%= @registration.id %></td>
+  </tr>
+  <tr>
+    <td>Presentation</td>
+    <td><%= @presentation_name %></td>
+  </tr>
+  <tr>
+    <td>Delegate</td>
+    <td><%= @delegate_name %></td>
+  </tr>
+</table>
+
+<br>
