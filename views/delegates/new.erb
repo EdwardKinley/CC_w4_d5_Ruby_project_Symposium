@@ -1,14 +1,32 @@
 <h1>Add new delegate</h1>
 
 <form method="post" action="/delegates">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name"/>
-
-  <label>Board member?:</label>
-  <input type="radio" name="board_member" value="no" checked/>No
-  <input type="radio" name="board_member" value="yes"/>Yes
-
-  <input type="submit" value="Submit"/>
+  <table class="edit">
+    <tr>
+      <td>
+        <label for="name">Name</label>
+      </td>
+      <td>
+        <input type="text" name="name" id="name"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Board member?</label>
+      </td>
+      <td>
+        <input type="radio" name="board_member"/>No
+        <input type="radio" name="board_member"/>Yes
+      </td>
+    </tr>
+    <tr>
+      <td class="blank">
+      </td>
+      <td>
+        <input type="submit" value="Submit"/>
+      </td>
+    </tr>
+  </table>
 </form>
 
 <br>
