@@ -34,7 +34,7 @@
 
 <table>
     <tr>
-      <th>Presentations for which this delegate is registered</th>
+      <th>Presentations for which <%= @delegate.name %> is registered</th>
     </tr>
   <% @delegate.presentations.each do |presentation| %>
     <tr>
@@ -44,5 +44,30 @@
     </tr>
   <% end %>
 </table>
+
+<br>
+
+<form method="post" action="/registrations">
+  <table class="edit">
+    <tr>
+      <th>Register <%= @delegate.name %> for another presentation</th>
+    </tr>
+    <tr>
+      <td>
+        <select name="presentation_id">
+          <% for presentation in @presentations %>
+          <option value="<%= presentation.id %>" ><%= presentation.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="delegate_id" value="<%= @delegate.id %>">
+        <input type="submit" value="Submit"/>
+      </td>
+    </tr>
+  </table>
+</form>
 
 <br>
