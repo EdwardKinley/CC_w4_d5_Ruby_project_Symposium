@@ -1,12 +1,35 @@
-<h2>Registration id <%= @registration.id %></h2>
+<h1>Registration details</h1>
 
-<h3>Presentation | <%= @registration.presentation.name %></h3>
-<h3>Delegate | <%= @registration.delegate.name %></h3>
+<table>
+  <tr>
+    <th>Registration id</th>
+    <th>Presentation</th>
+    <th>Delegate</th>
+  </tr>
+  <tr>
+    <td><%= @registration.id %></a></td>
+    <td><%= @registration.presentation.name %></td>
+    <td><%= @registration.delegate.name %></td>
+  </tr>
+</table>
 
-<form action="/registrations/<%= @registration.id %>/edit" method="get">
-  <input type="submit" value="Edit registration">
-</form>
+<br>
 
-<form action="/registrations/<%= @registration.id %>/delete" method="post">
-  <input type="submit" value="Delete registration">
-</form>
+<table>
+  <tr>
+    <th>
+      <form action="/registrations/<%= @registration.id %>/edit" method="get">
+        <input type="submit" value="Edit registration">
+      </form>
+    </th>
+    <th class="blank">
+    </th>
+    <th>
+      <form action="/registrations/<%= @registration.id %>/delete" method="post">
+        <input type="submit" value="Delete registration">
+      </form>
+    </th>
+  </tr>
+</table>
+
+<br>

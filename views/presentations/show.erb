@@ -1,15 +1,37 @@
-<h2><%= @presentation.name %></h2>
+<h1>Presentation details</h1>
 
-<h3>Time-slot | <%= @presentation.time_slot %></h3>
-<h3>Capacity | <%= @presentation.capacity %></h3>
+<table>
+  <tr>
+    <th>Presentation</th>
+    <th>Time Slot</th>
+    <th>Capacity</th>
+  </tr>
+  <tr>
+    <td><%= @presentation.name %></a></td>
+    <td><%= @presentation.time_slot %></td>
+    <td><%= @presentation.capacity %></td>
+  </tr>
+</table>
 
-<form action="/presentations/<%= @presentation.id %>/edit" method="get">
-  <input type="submit" value="Edit presentation">
-</form>
+<br>
 
-<form action="/presentations/<%= @presentation.id %>/delete" method="post">
-  <input type="submit" value="Delete presentation">
-</form>
+<table>
+  <tr>
+    <th>
+      <form action="/presentations/<%= @presentation.id %>/edit" method="get">
+        <input type="submit" value="Edit presentation">
+      </form>
+    </th>
+    <th class="blank">
+    </th>
+    <th>
+      <form action="/presentations/<%= @presentation.id %>/delete" method="post">
+        <input type="submit" value="Delete presentation">
+      </form>
+    </th>
+  </tr>
+</table>
+
 
 <h4>Registered delegates:</h4>
 <ul>

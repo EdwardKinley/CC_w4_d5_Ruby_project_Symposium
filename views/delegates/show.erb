@@ -1,14 +1,34 @@
-<h2><%= @delegate.name %></h2>
+<h1>Delegate details</h1>
 
-<h3>Board member | <span <%= @delegate.board_member=="t" ? "class='green'" : "class='red'" %>><%= @delegate.board_member=="t" ? "yes" : "no" %></span></h3>
+<table>
+  <tr>
+    <th>Delegate</th>
+    <th>Board member?</th>
+  </tr>
+  <tr>
+    <td><%= @delegate.name %></a></td>
+    <td <%= @delegate.board_member=="t" ? "class='green'" : "class='red'" %>><%= @delegate.board_member=="t" ? "yes" : "no" %></td>
+  </tr>
+</table>
 
-<form action="/delegates/<%= @delegate.id %>/edit" method="get">
-  <input type="submit" value="Edit delegate">
-</form>
+<br>
 
-<form action="/delegates/<%= @delegate.id %>/delete" method="post">
-  <input type="submit" value="Delete delegate">
-</form>
+<table>
+  <tr>
+    <th>
+      <form action="/delegates/<%= @delegate.id %>/edit" method="get">
+        <input type="submit" value="Edit delegate">
+      </form>
+    </th>
+    <th class="blank">
+    </th>
+    <th>
+      <form action="/delegates/<%= @delegate.id %>/delete" method="post">
+        <input type="submit" value="Delete delegate">
+      </form>
+    </th>
+  </tr>
+</table>
 
 <h4>Registered for presentations:</h4>
 <ul>
