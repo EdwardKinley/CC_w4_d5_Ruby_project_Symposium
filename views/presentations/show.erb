@@ -47,6 +47,7 @@
 
 <br>
 
+<% if @presentation.capacity > 0 %>
 <form method="post" action="/registrations">
   <table class="edit">
     <tr>
@@ -71,5 +72,6 @@
     </tr>
   </table>
 </form>
+<% end %>
 
 <br>

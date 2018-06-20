@@ -31,6 +31,9 @@ class Presentation
   end
 
   def register(delegate)
+    return "no remaining spaces" if @capacity == 0
+    @capacity -= 1
+    delegate.update()
     registration = Registration.new({"presentation_id" => self.id, "delegate_id" => delegate.id})
     registration.save()
   end
@@ -51,6 +54,12 @@ class Presentation
     sql = "UPDATE presentations SET capacity = $1 WHERE id = $2"
     values = [new_capacity, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def reduce_capacity()
+    return "no remaining spaces" if @capacity == 0
+    @capacity -= 1
+    self.update()
   end
 
   def delegates()
