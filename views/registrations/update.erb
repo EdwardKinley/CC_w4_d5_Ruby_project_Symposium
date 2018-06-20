@@ -1,3 +1,18 @@
-<p>Registration updated</p>
-<p>Presentation: <%= @registration.presentation.name %></p>
-<p>Delegate: <%= @registration.delegate.name %></p>
+<h1>Registration updated</h1>
+
+<table class="edit">
+  <tr>
+    <td>Registration id</td>
+    <td><%= @registration.id %></td>
+  </tr>
+  <tr>
+    <td>Presentation</td>
+    <td><%= @registration.presentation.name %></td>
+  </tr>
+  <tr>
+    <td>Delegate</td>
+    <td><%= @registration.delegate.name %></td>
+  </tr>
+</table>
+
+<br>
