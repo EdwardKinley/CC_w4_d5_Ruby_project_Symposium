@@ -40,7 +40,7 @@
     </tr>
   <% @presentation.delegates.each do |delegate| %>
     <tr>
-      <td><%= delegate.name %></td>
+      <td><a href="/delegates/<%= delegate.id %>"><%= delegate.name %></a></td>
     </tr>
   <% end %>
 </table>

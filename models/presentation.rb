@@ -54,7 +54,7 @@ class Presentation
   end
 
   def delegates()
-    sql = "SELECT * FROM (delegates d INNER JOIN registrations r ON d.id = r.delegate_id) WHERE presentation_id = $1"
+    sql = "SELECT d.* FROM delegates d INNER JOIN registrations r ON d.id = r.delegate_id WHERE presentation_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return Delegate.map_items(results)

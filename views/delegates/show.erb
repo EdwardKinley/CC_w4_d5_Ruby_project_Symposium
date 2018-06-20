@@ -38,7 +38,9 @@
     </tr>
   <% @delegate.presentations.each do |presentation| %>
     <tr>
-      <td><%= presentation.name %></td>
+      <td>
+        <a href="/presentations/<%= presentation.id %>"><%= presentation.name %></a>
+      </td>
     </tr>
   <% end %>
 </table>
