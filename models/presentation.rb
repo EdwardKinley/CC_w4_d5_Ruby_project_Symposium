@@ -60,6 +60,12 @@ class Presentation
     return Delegate.map_items(results)
   end
 
+  def capacity_color()
+    return "red" if @capacity == 0
+    return "amber" if @capacity < 10 && @capacity > 0
+    return "green"
+  end
+
   def self.map_items(data)
     return data.map{|datum| Presentation.new(datum)}
   end

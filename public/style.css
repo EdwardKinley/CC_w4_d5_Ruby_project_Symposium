@@ -36,6 +36,10 @@ td.green {
   color: green;
 }
 
+td.amber {
+  color: darkorange;
+}
+
 table {
   color: black;
   background-color: lightgrey;

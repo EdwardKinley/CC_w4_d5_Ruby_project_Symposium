@@ -10,7 +10,7 @@
     <tr>
       <td><a href="/presentations/<%= presentation.id %>"><%= presentation.name %></a></td>
       <td><%= presentation.time_slot %></td>
-      <td><%= presentation.capacity %></td>
+      <td class="<%= presentation.capacity_color %>"><%= presentation.capacity %></td>
     </tr>
   <% end %>
 </table>
