@@ -6,7 +6,7 @@
     <th>Board member?</th>
   </tr>
   <tr>
-    <td><%= @delegate.name %></td>
+    <td><a href="/delegates/<%= @delegate.id %>"><%= @delegate.name %></a></td>
     <td <%= @delegate.board_member=="yes" ? "class='green'" : "class='red'" %>><%= @delegate.board_member %></td>
   </tr>
 </table>

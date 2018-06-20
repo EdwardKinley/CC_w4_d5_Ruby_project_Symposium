@@ -7,7 +7,7 @@
     <th>Capacity</th>
   </tr>
   <tr>
-    <td><%= @presentation.name %></td>
+    <td><a href="/presentations/<%= @presentation.id %>"><%= @presentation.name %></a></td>
     <td><%= @presentation.time_slot %></td>
     <td><%= @presentation.capacity %></td>
   </tr>

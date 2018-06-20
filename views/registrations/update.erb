@@ -8,8 +8,8 @@
   </tr>
   <tr>
     <td><%= @registration.id %></td>
-    <td><%= @registration.presentation.name %></td>
-    <td><%= @registration.delegate.name %></td>
+    <td><a href="/presentations/<%= @registration.presentation_id %>"><%= @registration.presentation.name %></a></td>
+    <td><a href="/delegates/<%= @registration.delegate_id %>"><%= @registration.delegate.name %></a></td>
   </tr>
   <tr>
   </tr>
