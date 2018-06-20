@@ -1,16 +1,38 @@
 <h1>Edit presentation</h1>
 
 <form method="post" action="/presentations/<%= @presentation.id %>">
-
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" value="<%= @presentation.name %>"/>
-
-  <label for="time_slot">Time slot:</label>
-  <input type="number" min="1" max="6" name="time_slot" id="time_slot" value="<%= @presentation.time_slot %>"/>
-
-  <label for="capacity">Capacity:</label>
-  <input type="number" min="1" max="999" name="capacity" id="capacity" value="<%= @presentation.capacity %>"/>
-
-  <input type="submit" value="Submit"/>
-  
+  <table class="edit">
+    <tr>
+      <td>
+        <label for="name">Name</label>
+      </td>
+      <td>
+        <input type="text" name="name" id="name" value="<%= @presentation.name %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="time_slot">Time slot</label>
+      </td>
+      <td>
+        <input type="number" min="1" max="6" name="time_slot" id="time_slot" value="<%= @presentation.time_slot %>"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="capacity">Capacity</label>
+      </td>
+      <td>
+        <input type="number" min="1" max="999" name="capacity" id="capacity" value="<%= @presentation.capacity %>"/>
+      </td>
+    </tr>
+      <td class="blank">
+      </td>
+      <td>
+        <input type="submit" value="Submit"/>
+      </td>
+    </tr>
+  </table>
 </form>
+
+<br>

@@ -1,25 +1,39 @@
 <h1>Edit registration</h1>
 
 <form method="post" action="/registrations">
-
-  <label>
-  Select a presentation:
-    <select name="presentation_id">
-      <% for presentation in @presentations %>
-      <option value="<%= presentation.id %>" <%= "selected" if presentation.id == @registration.presentation_id %>><%= presentation.name %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <label>
-    Select a delegate:
-    <select name="delegate_id">
-      <% for delegate in @delegates %>
-      <option value="<%= delegate.id %>" <%= "selected" if delegate.id == @registration.delegate %>><%= delegate.name %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <input type="submit" value="Submit"/>
-
+  <table class="edit">
+    <tr>
+      <td>
+        Presentation
+      </td>
+      <td>
+        <select name="presentation_id">
+          <% for presentation in @presentations %>
+          <option value="<%= presentation.id %>" <%= "selected" if presentation.id == @registration.presentation_id %>><%= presentation.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Delegate
+      </td>
+      <td>
+        <select name="delegate_id">
+          <% for delegate in @delegates %>
+          <option value="<%= delegate.id %>" <%= "selected" if delegate.id == @registration.delegate %>><%= delegate.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="blank">
+      </td>
+      <td>
+        <input type="submit" value="Submit"/>
+      </td>
+    </tr>
+  </table>
 </form>
+
+<br>

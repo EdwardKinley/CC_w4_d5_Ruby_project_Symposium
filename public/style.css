@@ -59,9 +59,13 @@ table tr:hover {
   background-color: white;
 }
 
-table th.blank {
+table th.blank, td.blank {
   background-color: black;
   border: none;
+}
+
+table.edit tr:hover {
+  background-color: lightgrey;
 }
 
 button {
@@ -85,6 +89,10 @@ input {
 
 input:hover {
   background-color: white;
+}
+
+select {
+  font-size: 1em;
 }
 
 
