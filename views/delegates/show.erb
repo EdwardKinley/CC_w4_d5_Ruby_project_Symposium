@@ -30,9 +30,17 @@
   </tr>
 </table>
 
-<h4>Registered for presentations:</h4>
-<ul>
+<br>
+
+<table>
+    <tr>
+      <th>Presentations for which this delegate is registered</th>
+    </tr>
   <% @delegate.presentations.each do |presentation| %>
-  <li><%= presentation.name %></li>
+    <tr>
+      <td><%= presentation.name %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
+
+<br>

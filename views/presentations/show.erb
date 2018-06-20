@@ -32,10 +32,17 @@
   </tr>
 </table>
 
+<br>
 
-<h4>Registered delegates:</h4>
-<ul>
+<table>
+    <tr>
+      <th>Delegates registered for this presentation</th>
+    </tr>
   <% @presentation.delegates.each do |delegate| %>
-  <li><%= delegate.name %></li>
+    <tr>
+      <td><%= delegate.name %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
+
+<br>
