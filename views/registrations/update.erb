@@ -2,16 +2,16 @@
 
 <table class="edit">
   <tr>
-    <td>Registration id</td>
+    <th>Registration id</th>
+    <th>Presentation</th>
+    <th>Delegate</th>
+  </tr>
+  <tr>
     <td><%= @registration.id %></td>
-  </tr>
-  <tr>
-    <td>Presentation</td>
     <td><%= @registration.presentation.name %></td>
+    <td><%= @registration.delegate.name %></td>
   </tr>
   <tr>
-    <td>Delegate</td>
-    <td><%= @registration.delegate.name %></td>
   </tr>
 </table>
 
