@@ -25,7 +25,15 @@
       <td><a href="/presentations/<%= presentation.id %>"><%= presentation.name %></a></td>
       <td><%= presentation.time_slot %></td>
       <td><%= presentation.capacity %></td>
-      <td><%= presentation.delegates.count %></td>
+      <td>
+        <% if presentation.delegates.count > 0 %>
+          <a href="/presentations/<%= presentation.id %>">
+        <% end  %>
+          <%= presentation.delegates.count %>
+        <% if presentation.delegates.count > 0 %>
+          </a>
+        <% end %>
+      </td>
       <td class="<%= presentation.remaining_spaces_colour %>"><%= presentation.remaining_spaces %></td>
     </tr>
   <% end %>
