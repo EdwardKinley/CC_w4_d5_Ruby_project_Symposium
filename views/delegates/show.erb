@@ -34,7 +34,16 @@
 
 <table>
     <tr>
-      <th>Presentations for which <%= @delegate.name %> is registered (<%= @delegate.presentations.count %>)</th>
+      <% if @delegate.presentations.count < @presentations.count %>
+        <th>
+          Presentations for which <%= @delegate.name %> is registered (<%= @delegate.presentations.count %>)
+        </th>
+      <% end %>
+      <% if @delegate.presentations.count == @presentations.count %>
+        <th>
+          <%= @delegate.name %> is registered for all (<%= @presentations.count %>) presentations
+        </th>
+      <% end %>
     </tr>
   <% @delegate.presentations.each do |presentation| %>
     <tr>
@@ -47,35 +56,37 @@
 
 <br>
 
-<form method="post" action="/registrations">
-  <table class="edit">
-    <tr>
-      <th>
-        Register <%= @delegate.name %> for another presentation
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <select name="presentation_id">
-          <% for presentation in @presentations %>
-            <% if presentation.remaining_spaces > 0 %>
-              <% if !@delegate.presentation_ids.include?(presentation.id) %>
-                <option value="<%= presentation.id %>" >
-                  <%= presentation.name %>
-                </option>
+<% if @delegate.presentations.count < @presentations.count %>
+  <form method="post" action="/registrations">
+    <table class="edit">
+      <tr>
+        <th>
+          Register <%= @delegate.name %> for another presentation
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <select name="presentation_id">
+            <% for presentation in @presentations %>
+              <% if presentation.remaining_spaces > 0 %>
+                <% if !@delegate.presentation_ids.include?(presentation.id) %>
+                  <option value="<%= presentation.id %>" >
+                    <%= presentation.name %>
+                  </option>
+                <% end %>
               <% end %>
             <% end %>
-          <% end %>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="delegate_id" value="<%= @delegate.id %>">
-        <input type="submit" value="Submit"/>
-      </td>
-    </tr>
-  </table>
-</form>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="hidden" name="delegate_id" value="<%= @delegate.id %>">
+          <input type="submit" value="Submit"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+<% end %>
 
 <br>

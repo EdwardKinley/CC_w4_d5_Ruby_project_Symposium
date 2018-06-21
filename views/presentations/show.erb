@@ -52,34 +52,34 @@
 <br>
 
 <% if @presentation.remaining_spaces > 0 %>
-<form method="post" action="/registrations">
-  <table class="edit">
-    <tr>
-      <th>
-        Register another delegate for "<%= @presentation.name %>"
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <select name="delegate_id">
-          <% for delegate in @delegates %>
-            <% if !@presentation.delegate_ids.include?(delegate.id) %>
-              <option value="<%= delegate.id %>" >
-                <%= delegate.name %>
-              </option>
+  <form method="post" action="/registrations">
+    <table class="edit">
+      <tr>
+        <th>
+          Register another delegate for "<%= @presentation.name %>"
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <select name="delegate_id">
+            <% for delegate in @delegates %>
+              <% if !@presentation.delegate_ids.include?(delegate.id) %>
+                <option value="<%= delegate.id %>" >
+                  <%= delegate.name %>
+                </option>
+              <% end %>
             <% end %>
-          <% end %>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="presentation_id" value="<%= @presentation.id %>">
-        <input type="submit" value="Submit"/>
-      </td>
-    </tr>
-  </table>
-</form>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="hidden" name="presentation_id" value="<%= @presentation.id %>">
+          <input type="submit" value="Submit"/>
+        </td>
+      </tr>
+    </table>
+  </form>
 <% end %>
 
 <br>
