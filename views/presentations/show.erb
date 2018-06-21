@@ -64,7 +64,9 @@
         <select name="delegate_id">
           <% for delegate in @delegates %>
             <% if !@presentation.delegate_ids.include?(delegate.id) %>
-              <option value="<%= delegate.id %>" ><%= delegate.name %></option>
+              <option value="<%= delegate.id %>" >
+                <%= delegate.name %>
+              </option>
             <% end %>
           <% end %>
         </select>

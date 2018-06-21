@@ -59,7 +59,11 @@
         <select name="presentation_id">
           <% for presentation in @presentations %>
             <% if presentation.remaining_spaces > 0 %>
-              <option value="<%= presentation.id %>" ><%= presentation.name %></option>
+              <% if !@delegate.presentation_ids.include?(presentation.id) %>
+                <option value="<%= presentation.id %>" >
+                  <%= presentation.name %>
+                </option>
+              <% end %>
             <% end %>
           <% end %>
         </select>

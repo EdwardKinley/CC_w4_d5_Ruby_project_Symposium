@@ -54,6 +54,11 @@ class Delegate
     return Presentation.map_items(results)
   end
 
+  def presentation_ids()
+    presentations = self.presentations()
+    return presentations.map{|presentation| presentation.id}
+  end
+
   def self.map_items(data)
     return data.map{|datum| Delegate.new(datum)}
   end
