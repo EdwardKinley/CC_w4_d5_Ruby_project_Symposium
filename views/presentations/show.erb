@@ -40,7 +40,7 @@
 
 <table>
     <tr>
-      <th>Delegates registered for "<%= @presentation.name %>"</th>
+      <th>Delegates registered for "<%= @presentation.name %>" (<%= @presentation.delegates.count %>)</th>
     </tr>
   <% @presentation.delegates.each do |delegate| %>
     <tr>

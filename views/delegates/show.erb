@@ -34,7 +34,7 @@
 
 <table>
     <tr>
-      <th>Presentations for which <%= @delegate.name %> is registered</th>
+      <th>Presentations for which <%= @delegate.name %> is registered (<%= @delegate.presentations.count %>)</th>
     </tr>
   <% @delegate.presentations.each do |presentation| %>
     <tr>
