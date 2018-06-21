@@ -5,11 +5,15 @@
     <th>Name</th>
     <th>Time slot</th>
     <th>Capacity</th>
+    <th>Booked</th>
+    <th>Remaining</th>
   </tr>
   <tr>
     <td><a href="/presentations/<%= @presentation.id %>"><%= @presentation.name %></a></td>
     <td><%= @presentation.time_slot %></td>
-    <td class="<%= @presentation.capacity_color %>"><%= @presentation.capacity %></td>
+    <td><%= @presentation.capacity %></td>
+    <td><%= @presentation.delegates.count %></td>
+    <td class="<%= @presentation.remaining_spaces_colour %>"><%= @presentation.remaining_spaces %></td>
   </tr>
 </table>
 

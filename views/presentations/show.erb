@@ -5,11 +5,15 @@
     <th>Presentation</th>
     <th>Time Slot</th>
     <th>Capacity</th>
+    <th>Booked</th>
+    <th>Remaining</th>
   </tr>
   <tr>
     <td><%= @presentation.name %></a></td>
     <td><%= @presentation.time_slot %></td>
-    <td class="<%= @presentation.capacity_color %>"><%= @presentation.capacity %></td>
+    <td><%= @presentation.capacity %></td>
+    <td><%= @presentation.delegates.count %></td>
+    <td class="<%= @presentation.remaining_spaces_colour %>"><%= @presentation.remaining_spaces %></td>
   </tr>
 </table>
 
@@ -47,7 +51,7 @@
 
 <br>
 
-<% if @presentation.capacity > 0 %>
+<% if @presentation.remaining_spaces > 0 %>
 <form method="post" action="/registrations">
   <table class="edit">
     <tr>

@@ -9,7 +9,9 @@
       <td>
         <select name="presentation_id">
           <% for presentation in @presentations %>
-          <option value="<%= presentation.id %>" <%= "selected" if presentation.id == @registration.presentation_id %>><%= presentation.name %></option>
+            <% if presentation.remaining_spaces > 0 || presentation.id == @registration.presentation_id %>
+              <option value="<%= presentation.id %>" <%= "selected" if presentation.id == @registration.presentation_id %>><%= presentation.name %></option>
+            <% end %>
           <% end %>
         </select>
       </td>

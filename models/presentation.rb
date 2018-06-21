@@ -30,10 +30,17 @@ class Presentation
     SqlRunner.run(sql, values)
   end
 
+  def remaining_spaces()
+    sql = "SELECT COUNT (d.*) FROM delegates d INNER JOIN registrations r ON d.id = r.delegate_id WHERE r.presentation_id = $1"
+    values = [@id]
+    n = SqlRunner.run(sql, values).first["count"].to_i()
+    return @capacity - n
+  end
+
   def register(delegate)
-    return "no remaining spaces" if @capacity == 0
-    @capacity -= 1
-    delegate.update()
+    return "no remaining spaces" if self.remaining_spaces == 0
+    # @capacity -= 1
+    # delegate.update()
     registration = Registration.new({"presentation_id" => self.id, "delegate_id" => delegate.id})
     registration.save()
   end
@@ -69,9 +76,9 @@ class Presentation
     return Delegate.map_items(results)
   end
 
-  def capacity_color()
-    return "red" if @capacity == 0
-    return "amber" if @capacity < 10 && @capacity > 0
+  def remaining_spaces_colour()
+    return "red" if self.remaining_spaces <= 0
+    return "amber" if self.remaining_spaces < 10 && self.remaining_spaces > 0
     return "green"
   end
 
