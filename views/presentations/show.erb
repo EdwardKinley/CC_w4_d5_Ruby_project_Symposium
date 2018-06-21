@@ -40,7 +40,16 @@
 
 <table>
     <tr>
-      <th>Delegates registered for "<%= @presentation.name %>" (<%= @presentation.delegates.count %>)</th>
+      <% if @presentation.delegates.count < @delegates.count %>
+        <th>
+          Delegates registered for "<%= @presentation.name %>" (<%= @presentation.delegates.count %>)
+        </th>
+      <% end %>
+      <% if @presentation.delegates.count == @delegates.count %>
+        <th>
+          All (<%= @presentation.delegates.count %>) delegates are registered for "<%= @presentation.name %>"
+        </th>
+      <% end %>
     </tr>
   <% @presentation.delegates.each do |delegate| %>
     <tr>
@@ -51,7 +60,7 @@
 
 <br>
 
-<% if @presentation.remaining_spaces > 0 %>
+<% if @presentation.remaining_spaces > 0 && @presentation.delegates.count < @delegates.count %>
   <form method="post" action="/registrations">
     <table class="edit">
       <tr>
@@ -80,6 +89,7 @@
       </tr>
     </table>
   </form>
-<% end %>
 
-<br>
+  <br>
+
+<% end %>
