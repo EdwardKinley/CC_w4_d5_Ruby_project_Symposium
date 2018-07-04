@@ -6,12 +6,8 @@
     <th>Board member?</th>
   </tr>
   <tr>
-    <td>
-      <%= @delegate.name %>
-    </td>
-    <td <%= @delegate.board_member=="t" ? "class='green'" : "class='red'" %>>
-      <%= @delegate.board_member=="t" ? "yes" : "no" %>
-    </td>
+    <td><%= @delegate.name %></td>
+    <td <%= @delegate.board_member=="t" ? "class='green'" : "class='red'" %>><%= @delegate.board_member=="t" ? "yes" : "no" %></td>
   </tr>
 </table>
 
